@@ -13,7 +13,7 @@ export default function ContentTypeList() {
                 <img src={searchIcon} alt="logo" />
             </div>
             <div onClick={() => setShowModal(true)} className='new-type-container'>
-                <span>+New Type</span>
+                <span>+ New Type</span>
             </div>
             <Modal onClose={() => setShowModal(false)} show={showModal} />
             <div className='type-container'>

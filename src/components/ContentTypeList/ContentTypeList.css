@@ -22,6 +22,7 @@
 }
 
 .new-type-container {
+    cursor: pointer;
     background-color: rgba(233, 234, 242, 255);
     margin-top: 20px;
     height: 50px;
