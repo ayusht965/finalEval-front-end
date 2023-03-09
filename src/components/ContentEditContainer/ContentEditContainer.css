@@ -1,0 +1,80 @@
+.content-edit-container {
+    height: 90vh;
+    width: 895px;
+    background-color: rgba(235, 238, 254, 255);
+}
+
+.content-edit-tile {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    padding-left: 20px;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.content-edit-tile span {
+    font-size: 30px;
+    font-weight: 600;
+    color: '#4f4f4f';
+}
+
+.field-count {
+    padding-left: 20px;
+    font-size: 20px;
+    color: rbga(80, 80, 80, 255);
+}
+
+.fields-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-field-container {
+    cursor: pointer;
+    margin-top: 20px;
+    height: 60px;
+    background-color: rgba(244, 246, 255, 255);
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: dotted;
+}
+
+.content-fields-container {
+    margin-top: 20px;
+    height: 60px;
+    background-color: rgba(244, 246, 255, 255);
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 2px 3px #dddada;
+}
+
+.field-initials {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 59px;
+    background-color: rgba(118, 145, 255, 255);
+}
+
+/* .content-fields-container div {
+    width: 10%;
+    border-top-right-radius: 10x;
+    height: inherit;
+    background-color: rgba(118, 145, 255, 255);
+} */
