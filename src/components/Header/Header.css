@@ -1,0 +1,29 @@
+ .header {
+     display: flex;
+ }
+
+ .header-title {
+     padding: 25px 0 25px 20px;
+     background-color: rgba(54, 28, 88, 255);
+     height: 30px;
+     width: 280px;
+ }
+
+ .header-title span {
+     color: white;
+     font-size: 1.5rem;
+     font-weight: 600;
+ }
+
+ .content-type {
+     color: rgba(89, 89, 89, 255);
+     display: flex;
+     align-items: center;
+     justify-content: flex-start;
+ }
+
+ .content-type {
+     font-size: 25px;
+     margin-left: 50px;
+     font-weight: 600;
+ }
