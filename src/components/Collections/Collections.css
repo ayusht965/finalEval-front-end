@@ -1,0 +1,45 @@
+.collection-container {
+    height: 90vh;
+    width: 300px;
+    background-color: rgb(38, 33, 33);
+}
+
+.collection-title {
+    font-weight: 600;
+    color: rgb(150, 144, 144);
+    font-size: 15px;
+    padding: 0 1rem 0 1rem;
+    padding-top: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.collection-title img {
+    color: white;
+    height: 30px;
+    width: 30px;
+}
+
+.collection-list li {
+    cursor: pointer;
+}
+
+.collection-list {
+
+    color: rgb(150, 144, 144);
+    line-height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.builder-container {
+    cursor: pointer;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    height: 30px;
+}
