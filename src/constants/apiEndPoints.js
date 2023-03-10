@@ -23,6 +23,14 @@ export const ADD_NEW_FIELD = (ContentID) => ({
     url: `content/${ContentID}`,
     method: 'POST'
 });
+export const DELETE_FIELD = (ContentID) => ({
+    url: `contents/${ContentID}`,
+    method: 'DELETE'
+});
+export const UPDATE_FIELD = (ContentID) => ({
+    url: `content/${ContentID}`,
+    method: 'PUT'
+});
 // export const GET_CONTENT_BY_ID = (ContentID) => ({
 //     url: `api/content/${ContentID}`,
 //     method: 'GET'

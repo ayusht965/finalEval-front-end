@@ -18,8 +18,6 @@ export default function ContentEntries() {
         const getEntries = async () => {
             const res = await makeRequest(GET_CONTENT_BY_ID(id), {});
             setEntries(res);
-            console.log(res);
-            console.log(entries.Name);
         };
         const getAllContents = async () => {
             const response = await makeRequest(GET_ALL_CONTENTS, 'GET');

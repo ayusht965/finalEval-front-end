@@ -3,6 +3,7 @@
     width: 300px;
     background-color: rgba(212, 214, 229, 255);
     padding: 20px;
+    overflow: scroll;
 }
 
 .content-title {

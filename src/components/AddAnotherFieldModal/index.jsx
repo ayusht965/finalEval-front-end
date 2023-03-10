@@ -1,9 +1,9 @@
 import React from 'react';
-import { ADD_CONTENT, UPDATE_CONTENT_NAME, ADD_NEW_FIELD } from '../../constants/apiEndPoints';
+import { ADD_NEW_FIELD } from '../../constants/apiEndPoints';
 import makeRequest from '../../utils/makeRequest';
-import './Modal.css';
+import './AddAnotherFieldModal.css';
 
-export default function Modal(props) {
+export default function AddAnotherFieldModal(props) {
     const [name, setName] = React.useState('');
     if (!props.show) {
         return null;
@@ -13,24 +13,11 @@ export default function Modal(props) {
         setName(e.target.value);
     };
     const handleClick = () => {
-        console.log(props.id);
-        if (props.id) {
-            const updateContentName = async () => {
-                const res = await makeRequest(UPDATE_CONTENT_NAME(props.id), {}, { data: { name: name } });
-            };
-            updateContentName();
+        makeRequest(ADD_NEW_FIELD(props.id), {}, { data: { newField: name } }).then((res) => {
             props.onClose();
-            window.location.reload();
         }
-        if (!props.id) {
-            const addContent = async () => {
-                const res = await makeRequest(ADD_CONTENT, {}, { data: { name: name } });
-
-            };
-            addContent();
-            props.onClose();
-            window.location.reload();
-        }
+        );
+        window.location.reload();
     };
     return (
         <div className="modal" onClick={props.onClose}>
@@ -50,3 +37,6 @@ export default function Modal(props) {
         </div>
     );
 }
+
+
+

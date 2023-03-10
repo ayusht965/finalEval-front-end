@@ -6,21 +6,22 @@ import NewEntryModal from '../NewEntryModal';
 
 export default function ContentEntriesContainer({ entries }) {
     console.log(entries);
+    const filteredEntries = Object.keys(entries.Fields).filter((key) => key !== 'undefined');
     const [showModal, setShowModal] = React.useState(false);
     return entries ? (
         <div>
             <div className='content-entry-container'>
                 <div className='content-entrie-title'>
-                    <span className='entrie-count'>13 Entries Found</span>
+                    <span className='entrie-count'>{filteredEntries.length} Entries Found</span>
                     <div onClick={() => setShowModal(true)} className='new-entry-div'>
                         <span className='new-entry-text'>Add a new entry</span>
                     </div>
-                    <NewEntryModal onClose={() => setShowModal(false)} show={showModal} />
+                    <NewEntryModal entries={entries} onClose={() => setShowModal(false)} show={showModal} />
                 </div>
                 <div className='table-content-title'>
                     <div className='content-entries-fields'>
                         {
-                            entries ? Object.keys(entries.Fields).map((key, index) => {
+                            filteredEntries ? filteredEntries.map((key, index) => {
                                 return (
                                     <span key={index}>{key}</span>
                                 );
@@ -31,7 +32,7 @@ export default function ContentEntriesContainer({ entries }) {
                         <span>Website</span>
                         <span>Contact</span> */}
                     </div>
-                    <span>Actions</span>
+                    <span className='actions'>Actions</span>
                 </div>
                 <div className='content-entries'>
                     <div className='content-fields-container'>
@@ -39,7 +40,6 @@ export default function ContentEntriesContainer({ entries }) {
                             <span>1</span>
                             <span>John Doe</span>
                             <span>www.johndoe.com</span>
-                            <span>Text</span>
                         </div>
                         <div>
                             <img className='icon' src={editIcon} alt="" />
@@ -51,7 +51,7 @@ export default function ContentEntriesContainer({ entries }) {
                             <span>1</span>
                             <span>John Doe</span>
                             <span>www.johndoe.com</span>
-                            <span>Text</span>
+
                         </div>
                         <div>
                             <img className='icon' src={editIcon} alt="" />
@@ -63,7 +63,7 @@ export default function ContentEntriesContainer({ entries }) {
                             <span>1</span>
                             <span>John Doe</span>
                             <span>www.johndoe.com</span>
-                            <span>Text</span>
+
                         </div>
                         <div>
                             <img className='icon' src={editIcon} alt="" />
@@ -75,7 +75,7 @@ export default function ContentEntriesContainer({ entries }) {
                             <span>1</span>
                             <span>John Doe</span>
                             <span>www.johndoe.com</span>
-                            <span>Text</span>
+
                         </div>
                         <div>
                             <img className='icon' src={editIcon} alt="" />
@@ -87,7 +87,7 @@ export default function ContentEntriesContainer({ entries }) {
                             <span>1</span>
                             <span>John Doe</span>
                             <span>www.johndoe.com</span>
-                            <span>Text</span>
+
                         </div>
                         <div>
                             <img className='icon' src={editIcon} alt="" />
