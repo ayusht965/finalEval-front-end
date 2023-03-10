@@ -35,6 +35,10 @@ export const ADD_CONTENT_ENTRY = (ContentID) => ({
     url: `content/${ContentID}/entries`,
     method: 'POST'
 });
+export const DELETE_CONTENT_ENTRY = (ContentID) => ({
+    url: `content/${ContentID}/entries`,
+    method: 'DELETE'
+});
 // export const GET_CONTENT_BY_ID = (ContentID) => ({
 //     url: `api/content/${ContentID}`,
 //     method: 'GET'

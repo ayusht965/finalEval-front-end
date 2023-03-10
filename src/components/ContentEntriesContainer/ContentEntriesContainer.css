@@ -2,6 +2,7 @@
     background-color: rgba(235, 238, 254, 255);
     height: 90vh;
     width: 80.5vw;
+    overflow: scroll;
 }
 
 .content-entrie-title {

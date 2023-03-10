@@ -12,6 +12,7 @@ export default function NewEntryModal(props) {
     }
 
     const handleAddEntry = async () => {
+        console.log(props.id);
         await makeRequest(ADD_CONTENT_ENTRY(props.id), {}, { data: { newEntry: entry } }).then((res) => {
             console.log(res);
         });
