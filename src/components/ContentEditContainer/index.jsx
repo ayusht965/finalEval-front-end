@@ -42,8 +42,8 @@ export default function ContentEditContainer({ content }) {
                                     <div className='field-initials'>AB</div>
                                     <span>{field}</span>
                                     <div>
-                                        <img className='icon' src={editIcon} alt="editIcon" />
-                                        {/* <Modal onClose={() => setShowFieldEditModal(false)} id={content.id} showFieldEditModal={showFieldEditModal} show={showFieldEditModal} /> */}
+                                        <img onClick={() => setShowFieldEditModal(true)} className='icon' src={editIcon} alt="editIcon" />
+                                        <Modal onClose={() => setShowFieldEditModal(false)} old={field} id={content.id} showFieldEditModal={showFieldEditModal} show={showFieldEditModal} />
                                         <img onClick={() => handleDelete(field)} className='icon' src={binIcon} alt="" />
                                     </div>
                                 </div>

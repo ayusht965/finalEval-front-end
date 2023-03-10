@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-export default function LandingPage({ entries }) {
+export default function Header({ entries }) {
     return entries ? (
         <div className='header'>
             <div className='header-title'>

@@ -13,22 +13,21 @@ export default function Modal(props) {
         setName(e.target.value);
     };
     const handleClick = () => {
-        // console.log(props.showFieldEditModal);
-        // if (props.showFieldEditModal) {
-        //     const editField = async () => {
-        //         const response = await makeRequest(UPDATE_FIELD(contentId), {}, {
-        //             data: {
-        //                 old: old,
-        //                 new: name,
-        //             }
-        //         });
-        //         editField();
-        //         props.onClose();
-        //         window.location.reload();
-        //         return;
-        //     };
-        // }
-         if (props.id) {
+        if (props.showFieldEditModal) {
+            const editField = async () => {
+                const response = await makeRequest(UPDATE_FIELD(contentId), {}, {
+                    data: {
+                        old: props.old,
+                        new: name,
+                    }
+                });
+                editField();
+                props.onClose();
+                window.location.reload();
+                return;
+            };
+        }
+        else if (props.id) {
             const updateContentName = async () => {
                 const res = await makeRequest(UPDATE_CONTENT_NAME(props.id), {}, { data: { name: name } });
             };

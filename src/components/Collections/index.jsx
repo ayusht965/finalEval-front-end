@@ -6,7 +6,7 @@ export default function Collections({ allContents }) {
     const [id, setId] = useState();
     const navigate = useNavigate();
     const redirectToHome = () => {
-        navigate('/');
+        navigate('/home');
     };
     const handleNavigate = (id) => {
         setId(id);

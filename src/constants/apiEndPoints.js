@@ -31,6 +31,10 @@ export const UPDATE_FIELD = (ContentID) => ({
     url: `content/${ContentID}`,
     method: 'PUT'
 });
+export const ADD_CONTENT_ENTRY = (ContentID) => ({
+    url: `content/${ContentID}/entries`,
+    method: 'POST'
+});
 // export const GET_CONTENT_BY_ID = (ContentID) => ({
 //     url: `api/content/${ContentID}`,
 //     method: 'GET'

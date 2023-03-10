@@ -4,7 +4,7 @@ import Collections from '../../components/Collections';
 import ContentEntriesContainer from '../../components/ContentEntriesContainer';
 import './ContentEntries.css';
 import { GET_ALL_CONTENTS } from '../../constants/apiEndPoints';
-import { GET_CONTENT_BY_ID } from '../../constants/apiEndPoints';
+import { GET_CONTENT_ENTRIES } from '../../constants/apiEndPoints';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import makeRequest from '../../utils/makeRequest';
@@ -12,9 +12,14 @@ import makeRequest from '../../utils/makeRequest';
 export default function ContentEntries() {
     const location = useLocation();
     const [entries, setEntries] = useState();
+    const [contentEntries, setContentEntries] = useState();
     const [allContents, setAllContents] = useState();
     const id = location.pathname.slice(-1);
     useEffect(() => {
+        const getContentEntriesById = async () => {
+            const res = await makeRequest(GET_CONTENT_ENTRIES(id), {});
+            setContentEntries(res);
+        };
         const getEntries = async () => {
             const res = await makeRequest(GET_CONTENT_BY_ID(id), {});
             setEntries(res);
@@ -23,6 +28,7 @@ export default function ContentEntries() {
             const response = await makeRequest(GET_ALL_CONTENTS, 'GET');
             setAllContents(response);
         };
+        getContentEntriesById();
         getAllContents();
         getEntries();
     }, [id]);
@@ -32,9 +38,8 @@ export default function ContentEntries() {
             <Header entries={entries} />
             <div className='body-container'>
                 <Collections allContents={allContents} />
-                <ContentEntriesContainer entries={entries} />
+                <ContentEntriesContainer entries={entries} contentEntries={contentEntries} />
             </div>
-            <h1>{entries.name}</h1>
         </div>
     ) : (<div>Loading...</div>);
 }
