@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { BACKEND_URL } from '../../constants/apiEndPoints';
-// import { ERROR_ROUTE } from '../../constants/routes';
 const makeRequest = async (apiEndPoint, navigate, dynamicConfig = {}) => {
     try {
         const requestDetails = {
@@ -13,13 +12,6 @@ const makeRequest = async (apiEndPoint, navigate, dynamicConfig = {}) => {
         return data;
     } catch (e) {
         console.log(e);
-        // const errorStatus = e.response?.status;
-        // if (errorStatus) {
-        //     navigate(`${ERROR_ROUTE}/${errorStatus}`);
-        // } else {
-        //     navigate(ERROR_ROUTE);
-        // }
-        // return null;
     }
 };
 export default makeRequest;
