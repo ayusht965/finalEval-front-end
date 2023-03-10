@@ -4,34 +4,28 @@ import searchIcon from '../../assets/icon-search-dark@3x.png';
 import Modal from '../Modal';
 
 
-export default function ContentTypeList() {
+export default function ContentTypeList({ allContents, handler }) {
     const [showModal, setShowModal] = React.useState(false);
     return (
         <div className='content-type-list-container'>
             <div className='content-title'>
-                7 TYPES
+                {allContents.length} Content Types
                 <img src={searchIcon} alt="logo" />
             </div>
             <div onClick={() => setShowModal(true)} className='new-type-container'>
                 <span>+ New Type</span>
             </div>
             <Modal onClose={() => setShowModal(false)} show={showModal} />
-            <div className='type-container'>
-                <span>Company_Profile</span>
-                <span>13</span>
-            </div>
-            <div className='type-container'>
-                <span>Type 3</span>
-                <span>13</span>
-            </div>
-            <div className='type-container'>
-                <span>Type 2</span>
-                <span>13</span>
-            </div>
-            <div className='type-container'>
-                <span>Type 3</span>
-                <span>13</span>
-            </div>
+            {
+                allContents.map((content, index) => {
+                    return (
+                        <div onClick={() => handler(content)} key={index} className='type-container'>
+                            <span>{content.Name}</span>
+                            <span>{Object.keys(content.Fields).length}</span>
+                        </div>
+                    );
+                })
+            }
         </div>
     );
 }

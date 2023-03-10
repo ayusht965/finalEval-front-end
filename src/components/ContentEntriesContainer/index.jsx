@@ -4,9 +4,10 @@ import binIcon from '../../assets/trash-delete-recycle-bin-bucket-waste@3x.png';
 import './ContentEntriesContainer.css';
 import NewEntryModal from '../NewEntryModal';
 
-export default function ContentEntriesContainer() {
+export default function ContentEntriesContainer({ entries }) {
+    console.log(entries);
     const [showModal, setShowModal] = React.useState(false);
-    return (
+    return entries ? (
         <div>
             <div className='content-entry-container'>
                 <div className='content-entrie-title'>
@@ -18,10 +19,17 @@ export default function ContentEntriesContainer() {
                 </div>
                 <div className='table-content-title'>
                     <div className='content-entries-fields'>
-                        <span>Id</span>
+                        {
+                            entries ? Object.keys(entries.Fields).map((key, index) => {
+                                return (
+                                    <span key={index}>{key}</span>
+                                );
+                            }) : null
+                        }
+                        {/* <span>Id</span>
                         <span>Name</span>
                         <span>Website</span>
-                        <span>Contact</span>
+                        <span>Contact</span> */}
                     </div>
                     <span>Actions</span>
                 </div>
@@ -90,5 +98,5 @@ export default function ContentEntriesContainer() {
 
             </div>
         </div>
-    );
+    ) : (<div>Loading...</div>);
 }

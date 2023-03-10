@@ -1,10 +1,25 @@
 import React from 'react';
+import { ADD_CONTENT, UPDATE_CONTENT_NAME } from '../../constants/apiEndPoints';
+import makeRequest from '../../utils/makeRequest';
 import './Modal.css';
 
 export default function Modal(props) {
+    const [name, setName] = React.useState('');
     if (!props.show) {
         return null;
     }
+    const handleChange = (e) => {
+        setName(e.target.value);
+    };
+    const handleClick = () => {
+
+        makeRequest(ADD_CONTENT, {}, { data: { name: name } }).then((res) => {
+            props.onClose();
+        });
+        window.location.reload();
+        return;
+
+    };
     return (
         <div className="modal" onClick={props.onClose}>
             <div className="modal-content" onClick={e => e.stopPropagation()}>
@@ -13,11 +28,11 @@ export default function Modal(props) {
                 </div>
                 <div className='modal-body'>
                     <span>Name of the content type</span>
-                    <input type="text" />
+                    <input onChange={handleChange} type="text" />
                 </div>
                 <div className='modal-footer'>
                     <button onClick={props.onClose} className='modal-close-button'>Close</button>
-                    <button className='modal-create-button'>Create</button>
+                    <button onClick={handleClick} className='modal-create-button'>Create</button>
                 </div>
             </div>
         </div>

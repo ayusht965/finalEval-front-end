@@ -1,4 +1,9 @@
 .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
@@ -6,8 +11,6 @@
 }
 
 .modal-content {
-    margin-left: 65%;
-    height: inherit;
     border-radius: 20px;
     padding: 30px;
     width: 500px;
@@ -23,16 +26,15 @@
 .modal-header {
     color: rgba(89, 89, 89, 255);
     font-weight: 700;
+    margin: 0;
     font-size: 20px;
-    padding: 70px 0 50px 0;
     font-weight: bold;
 }
 
 .modal-body {
-    height: 70vh;
-
     font-weight: 700;
     color: rgba(89, 89, 89, 255);
+
     font-size: 13px;
     display: flex;
     flex-direction: column;
@@ -49,10 +51,8 @@
 }
 
 .modal-footer {
-    position: absolute;
     display: flex;
-    justify-content: space-around;
-    bottom: 0;
+    justify-content: flex-end;
 }
 
 .modal-footer button {
@@ -62,7 +62,6 @@
     border-radius: 10px;
     margin: 0 20px 0 20px;
     border: none;
-    margin-bottom: 20px;
 }
 
 .modal-footer button:hover {

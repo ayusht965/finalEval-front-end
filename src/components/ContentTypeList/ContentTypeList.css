@@ -38,6 +38,7 @@
 }
 
 .type-container {
+    cursor: pointer;
     background-color: '#ffffff';
     margin-top: 20px;
     height: 50px;

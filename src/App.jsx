@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LogInPage />} />
-          <Route path="/content-entries" element={<ContentEntries />} />
+          <Route path="/content-entries/:contentId?" element={<ContentEntries />} />
         </Routes>
       </BrowserRouter>
     </div>
